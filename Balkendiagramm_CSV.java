@@ -15,7 +15,8 @@ public class Balkendiagramm_CSV extends PApplet
     // Liste mit allen Werten 
     // Deklariere ein Array zahlen für die Punkte und ein Array namen für die Spielernamen
     //------------
-    // TODO
+    int[] zahlen;
+    String[] namen;
     //------------
 
     // Schriften
@@ -57,7 +58,10 @@ public class Balkendiagramm_CSV extends PApplet
         // Initialisiere Arrays, in die alle Zeilen der Tabelle passen
         // Die Anzahl der gespeicherten Zeilen bekommt man mit csv.getRowCount()
         //------------
-        // TODO
+        for(int i=0; i< csv.getRowCount(); i++)
+        {
+            zahlen[i] = csv.getInt(i,0);
+        }
         //------------
 
         // Fülle die Arrays mit Werten aus der Tabelle
