@@ -15,7 +15,6 @@ public class Balkendiagramm_CSV extends PApplet
     // Liste mit allen Werten 
     // Deklariere ein Array zahlen für die Punkte und ein Array namen für die Spielernamen
     //------------
-   
 
     int[] zahlen;
     String[] namen;
