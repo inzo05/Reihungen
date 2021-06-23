@@ -158,8 +158,20 @@ public class Maximumsuche extends PApplet
         //       Als Ergebnis soll die Methode die Position des Maximums zurückgeben
         //       Kommentiere die Maximumsuche
         // ------------------------------------------------------------------------------
+        if(zahlen.length==0)
+        {
+            return -1;
+        }
+        int max = 0; //maximum aktuell
+        for(int i=1; i<zahlen.length; i++)
+        {
+            if(zahlen[i] > zahlen[max])
+            {
+                max = i;
+            }
+        }
         //<>//
-        return -1;
+        return max;
     }
 
     /**
