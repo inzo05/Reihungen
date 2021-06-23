@@ -26,7 +26,9 @@ public class Maximumsuche extends PApplet
     //       untersuchtes Element
     // -------------------------------------------------------------------
     // aktuell groesstes Element
+    int max;
     // aktuell untersuchtes Element
+    int akt;
     public int verzoegerung=1000;  // Geschwindigkeit der Ausführung
 
     // Schriften
@@ -80,7 +82,7 @@ public class Maximumsuche extends PApplet
     @Override
     public void keyPressed() {
         // Animierte Suche mit Taste "a"
-        if (key=='a') {
+        if (key=='b') {
             thread("maximumsuche");
         }
     }
@@ -133,6 +135,7 @@ public class Maximumsuche extends PApplet
                 // ToDo: Falls i dem aktuell untersuchtem oder der aktuellen Maximal-
                 //       position entspricht, muss eine andere Farbe gewählt werden
                 // ----------------------------------------------------------------------
+                if (i == max) fill(250,0,0);
 
                 // Balkendiagramm zeichnen
                 if (zahlen[i]>=0) rect(120, 25+i*15, zahlen[i]+1, 13);
@@ -162,14 +165,19 @@ public class Maximumsuche extends PApplet
         {
             return -1;
         }
-        int max = 0; //maximum aktuell
-        for(int i=1; i<zahlen.length; i++)
+        max = 0; //maximum aktuell
+        for(akt=1; akt<zahlen.length; akt++)
         {
-            if(zahlen[i] > zahlen[max])
+            if(zahlen[akt] > zahlen[max])
             {
-                max = i;
+                max = akt;
+                delay(verzoegerung);
+                redraw();
             }
-        }
+        delay(verzoegerung);
+        redraw();
+        
+    }
         //<>//
         return max;
     }
