@@ -117,7 +117,13 @@ public class Zeitungsmeldung extends PApplet
         return summe;
     }
     
-     double berechnedurchschnitt(int[] zahlen) {
+    int anzahlSpieler(String[] namen){
+        
+        int anzahlSpieler = 0;
+        return anzahlSpieler;
+    }
+    
+    double berechnedurchschnitt(int[] zahlen) {
         int summe;
         int i;
         double durchschnitt = 0;
