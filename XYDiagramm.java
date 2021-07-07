@@ -77,7 +77,35 @@ public class XYDiagramm extends PApplet
             }
         }
     }
+    
+    public void zeichneDiagramm(){
+     
+        if (x_werte != null) {
+            for (int i = 0; i<41; i++) {
 
+                fill(20,25,165);
+                // aktuelle Elemente farblich hervorheben
+                if (i == akt) {
+                    fill(140,230,20);
+                } 
+                if (i == akt_maximum) {
+                    fill(230,60,140);
+                } 
+
+                // Diagramm zeichnen
+                if (x_werte[i]>=0) point((float)x_werte[i] ,(float)y_werte[i]);
+
+                // Beschriftung
+                fill(255,255,255);
+                //text(""+y_werte[i], 2, 4);
+                //text(""+x_werte[i], 2, 4);
+                text(""+y_werte[i], 2, 35+i*15);
+                text(""+x_werte[i], 70, 35+i*15);
+            }
+        }
+        
+    }
+    
     public void zeichneBalken() {
 
         // Überschrift
@@ -88,7 +116,7 @@ public class XYDiagramm extends PApplet
 
         // Alle Einträge darstellen
         if (x_werte != null) {
-            for (int i = 0; i< x_werte.length; i++) {
+            for (int i = 0; i<41; i++) {
 
                 fill(20,25,165);
                 // aktuelle Elemente farblich hervorheben
@@ -102,14 +130,14 @@ public class XYDiagramm extends PApplet
                 // Balkendiagramm zeichnen
                 int breite = (int) y_werte[i];
                 int length = (int) x_werte[i];
-                if (x_werte[i]>=0) rect(120, 25+i*15, (int)  x_werte[i]+1, 13);
+                if (x_werte[i]>=0) rect(120, 25+i*15, (int)  y_werte[i]+1, 13);
 
                 // Beschriftung
                 fill(255,255,255);
                 //text(""+y_werte[i], 2, 4);
                 //text(""+x_werte[i], 2, 4);
-                text("i="+i, 2, 38+i*15);
-                text("i="+i, 2, 38+i*15);
+                text(""+y_werte[i], 2, 35+i*15);
+                text(""+x_werte[i], 70, 35+i*15);
             }
         }
     }
