@@ -53,7 +53,7 @@ public class XYDiagramm extends PApplet
         // CSV-Datei laden und anzeigen
         ladeTabelle("data/Amplitudes.csv");
         stroke(250,250,200);
-        zeichneBalken();
+        zeichneDiagramm();
     }
 
     //<>//
@@ -94,13 +94,6 @@ public class XYDiagramm extends PApplet
 
                 // Diagramm zeichnen
                 if (x_werte[i]>=0) point((float)x_werte[i] ,(float)y_werte[i]);
-
-                // Beschriftung
-                fill(255,255,255);
-                //text(""+y_werte[i], 2, 4);
-                //text(""+x_werte[i], 2, 4);
-                text(""+y_werte[i], 2, 35+i*15);
-                text(""+x_werte[i], 70, 35+i*15);
             }
         }
         
